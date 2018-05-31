@@ -88,4 +88,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { host: 'https://entrancewp.herokuapp.com/users', port: 3000 }
+
+  config.action_mailer.smtp_settings = {
+ :enable_starttls_auto => true,
+ :address => "smtp.gmail.com",
+ :port => 587,
+ :domain => 'smtp.gmail.com',
+ :user_name => "carside370@gmail.com", #gmailアドレス
+ :password => "minao1010", #gmailパスワード
+ :authentication => 'login',
+}
 end
