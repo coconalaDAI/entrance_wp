@@ -1,0 +1,21 @@
+<div id = 'main'>
+<h1>Lv3のページ</h1>
+
+<%= form_for @question3 do |f|%>
+  <div class = 'left_contents'>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <p>現在の職場の勤続年数<%=f.text_field :length_of_service%></p>
+  <p>事業所（会社）の従業員数<%=f.text_field :employee%></p>
+  <p>職業<%=f.text_field :job%></p>
+  <p><%= f.submit '送信' %></p>
+  </div>
+  <div class = 'right_contents'>
+  <p>持っているスキルや免許など<%=f.text_area :skill%></p>
+  <p>スポットコンサルの依頼を受ける<%=f.select :is_consul, [['はい', true],['いいえ', false]]%></p>
+  <p>ラッピング作業は自身で行う意思がある　<%=f.select :is_wrapping, [['はい', true],['いいえ', false]]%></p>
+  </div>
+
+<%end%>
+
+<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</div>

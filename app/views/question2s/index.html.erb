@@ -1,0 +1,40 @@
+<div id = 'main'>
+<h1>Lv2のページ</h1>
+
+<%= form_for @question2 do |f|%>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class = 'left_contents'>
+  <p>電話番号<%=f.text_field :phone_number%></p>
+  <p>郵便番号<%=f.text_field :postal_code%></p>
+  <p>住所<%=f.text_field :address%></p>
+  <p>県<%=f.collection_select :prefecture, JpPrefecture::Prefecture.all, :code, :name%></p>
+  <p>年齢<%=f.number_field :age%></p>
+  <p><%= f.submit '送信' %></p>
+  </div>
+  
+  <div class = 'right_contents'>
+  <p>性別<%=f.text_field :gender%></p>
+  <p>車種<%=f.text_field :car_type%></p>
+  <p>年式(製造年月日)<%=f.text_field :model_year%></p>
+  <p>車両の色<%=f.text_field :color%></p>
+  <p>免許証の色<%=f.text_field :licence_type%></p>
+  </div>
+<%end%>
+
+<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</div>
+
+<script type="text/javascript" src="https://postcode-jp.appspot.com/js/postcodejp.js" charset="utf-8"></script>
+<script type="text/javascript">
+var initPostcodeJp = funciton() {
+    var autoComplement = new postcodejp.address.AutoComplementService('__apikey__');
+    autoComplement.setZipTextbox('question2_postal_code');
+    autoComplement.add(new postcodejp.address.StateTownStreetTextbox('question2_address'));
+    autoComplement.observe();
+};
+if(window.addEventListener){
+  window.addEventListener('load', initPostcodeJp)
+}else{
+  window.attachEvent('onload', initPostcodeJp)
+}
+</script>
