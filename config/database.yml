@@ -52,4 +52,4 @@ production:
   url: <%= ENV['DATABASE_URL'] %>
   database: entrance_wp_production
   username: root
-  password: <%= ENV['ENTRANCE_WP_DATABASE_PASSWORD'] %>
+  password: root
