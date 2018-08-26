@@ -45,17 +45,6 @@ set :keep_releases, 5
 
 namespace :deploy do
 
-  task :init_permission do
-    on release_roles :all do
-    execute :sudo, :chown, '-R', "#{fetch(:user)}:#{fetch(:group)}", deploy_to
-    end
-  end
-    task :reset_permission do
-    on release_roles :all do
-    execute :sudo, :chown, '-R', "nginx:nginx", deploy_to
-  end
-end
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -75,6 +64,4 @@ end
     end
   end
 
-  #before :starting, :init_permission
-  #after :finished, :reset_permission
 end
