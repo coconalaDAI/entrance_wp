@@ -97,7 +97,7 @@
 }
 
 #login .input100 {
-  background: rgb(108, 188, 44, 0.2);
+  background: rgba(108, 188, 44, 0.2);
 }
 
 #login .focus-input100 {
@@ -108,14 +108,14 @@
   .form-container {
     width: 55%;
   }
-} 
+}
 
 @media (max-width: 1150px) {
   .wrap-contact100 {
     padding-left: 5%;
     padding-right: 5%;
   }
-} 
+}
 
 @media (max-width: 768px) {
   .wrap-contact100 {
@@ -126,7 +126,7 @@
   .form-container {
     width: 100%;
   }
-} 
+}
 
 @media (max-width: 500px) {
   .contact100-form-title img {
