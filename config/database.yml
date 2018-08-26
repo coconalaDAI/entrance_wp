@@ -53,3 +53,4 @@ production:
   database: entrance_wp_production
   username: entrance_wp
   password: <%= ENV['ENTRANCE_WP_DATABASE_PASSWORD'] %>
+  host: 153.126.197.150
