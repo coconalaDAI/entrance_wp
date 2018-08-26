@@ -1,0 +1,53 @@
+<div>
+  <h1>管理者ページ</h1>
+  <h2><%= link_to 'LV2のページ情報へ', admin_pages_index2_path %></h2>
+  <div>
+    <%= render :partial => 'search' %>
+    <table class="table table-hover">
+      </tbody>
+        <tr>
+          <th>ID</th>
+          <th>性</th>
+          <th>名</th>
+          <th>TEL</th>
+          <th>郵便番号</th>
+          <th>県</th>
+          <th>市</th>
+          <th>区</th>
+          <th>年齢</th>
+          <th>性別</th>
+          <th>車種</th>
+          <th>年式</th>
+          <th>車両の色</th>
+          <th>車庫証明の住所</th>
+          <th>免許証の色</th>
+          <th>モバイルのOS</th>
+          <th>ドライブレコーダー</th>
+          <th></th>
+        </tr>
+        <% @user_datas.each do |elem| %>
+        <tr>
+          <td><%= link_to "#{elem.id}", edit_admin_page_path(id:elem.id) %></td>
+          <td><%= elem.firstName %></td>
+          <td><%= elem.lastName %></td>
+          <td><%= elem.phone_number %></td>
+          <td><%= elem.postal_code %></td>
+          <td><%= elem.prefecture %></td>
+          <td><%= elem.address %></td>
+          <td><%= elem.address2 %></td>
+          <td><%= elem.age %></td>
+          <td><%= elem.gender %></td>
+          <td><%= elem.car_type %></td>
+          <td><%= elem.model_year %></td>
+          <td><%= elem.color %></td>
+          <td><%= elem.carAddress %></td>
+          <td><%= elem.licence_type %></td>
+          <td><%= elem.mobileOS %></td>
+          <td><%= convertBoolValueToStr(elem.isDriveRecorder) %></td>
+          <td><%= button_to "削除", "admin_pages/#{elem.id}", method: "delete", data: { confirm: "id:#{elem.id}のデータを削除します。\n*削除後データの復元はできません。" } %></td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>

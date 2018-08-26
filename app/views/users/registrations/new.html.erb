@@ -1,0 +1,160 @@
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag 'bootstrap.min.css' %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag 'font-awesome-4.7.0/css/font-awesome.min.css' %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag 'animate.css' %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag 'hamburgers.min.css' %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag 'select2.min.css' %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag 'register/util.css' %>
+  <%= stylesheet_link_tag 'register/main.css' %>
+  <%= stylesheet_link_tag 'register/customize.css?0716' %>
+<!--===============================================================================================-->
+</head>
+<div class="bg-contact100" style="background-image: url(<%= asset_path 'bg-01.jpg' %>);">
+  <div class="container-contact100">
+    <header class="header-container">
+      <span id="h-register">登録画面</span>
+      <span id="h-login">ログイン画面</span>
+    </header>
+    <div class="wrap-contact100">
+
+
+      <div class="contact100-pic js-tilt" data-tilt>
+        <%= image_tag 'img-01.png', id:'img-register', alt:'IMG' %>
+        <%= image_tag 'img-02.png', id:'img-login', alt:'IMG' %>
+      </div>
+
+
+      <div class="form-container">
+        <div class="contact100-form-title">
+          <%= image_tag 'carside-logo.png', alt:'Carside' %>
+          <div class="btn-wrap">
+            <a href="http://carside.jp">Home</a>
+            <!--<a href="#">Log in</a>-->
+          </div>
+        </div>
+
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a id="tab-register" href="#register" class="nav-link active" data-toggle="tab"><span>登録</span></a>
+          </li>
+          <li class="nav-item">
+            <a id="tab-login" href="#login" class="nav-link" data-toggle="tab"><span>ログイン</span></a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="register" class="tab-pane fade show active">
+
+            <!-- 登録フォーム -->
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+              <div class="wrap-input100 validate-input" data-validate = "名前の入力が必要です">
+                <%= f.text_field :name, class:'input100', placeholder:'Name' %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+              </div>
+              <div class="wrap-input100 validate-input" data-validate = "メールの入力が必要です: ex@abc.xyz">
+                <%= f.email_field :email, autocomplete: "email" , class:'input100', placeholder:'Email' %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <div class="wrap-input100 validate-input">
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> 文字以上で入力してください。)</em>
+                <% end %>
+                <%= f.password_field :password, autocomplete: "off", class:'input100', placeholder:'Password' %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <!--<i class="fas fa-key" aria-hidden="true"></i>-->
+                </span>
+              </div>
+              <div class="wrap-input100 validate-input">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class:'input100', placeholder:'PasswordConfirmed' %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <!--<i class="far fa-key" aria-hidden="true"></i>-->
+                </span>
+              </div>
+
+              <div class="container-contact100-form-btn">
+                  <%= f.button "Send", class:'contact100-form-btn' %>
+              </div>
+            <%end%>
+          </div>
+
+          <div id="login" class="tab-pane fade">
+
+            <!-- ログインフォーム -->
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="wrap-input100 validate-input" data-validate = "メールの入力が必要です: ex@abc.xyz">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input100', placeholder:'Email' %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <div class="wrap-input100 validate-input">
+                <%= f.password_field :password, autocomplete:'off', class: 'input100', placeholder:'Password' %>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+              </div>
+
+              <div class="container-contact100-form-btn">
+                  <%= f.button "Log in", class:'contact100-form-btn' %>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--===============================================================================================-->
+  <%= javascript_include_tag 'jquery-3.2.1.min.js' %>
+  <%= javascript_include_tag 'bootstrap.min.js' %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag 'popper.js' %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag 'select2.min.js' %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag 'tilt.jquery.min.js' %>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+  <%= javascript_include_tag 'register/main.js' %>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>

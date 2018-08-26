@@ -1,0 +1,35 @@
+<div>
+  <h1>管理者ページ</h1>
+  <h2><%= link_to 'LV1のページ情報へ', admin_pages_path %></h2>
+  <div>
+    <%= render :partial => 'search' %>
+    <table class="table table-hover">
+      </tbody>
+        <tr>
+          <th>ID</th>
+          <th>現在の職場の勤続年数</th>
+          <th>事業所（会社）の従業員数</th>
+          <th>職業</th>
+          <th>持っているスキルや免許</th>
+          <th>スポットワークの依頼</th>
+          <th>ラッピング作業</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% @user_datas.each do |elem| %>
+        <tr>
+          <td><%= link_to "#{elem.id}", edit_admin_page_path(id:elem.id) %></td>
+          <td><%= elem.length_of_service %></td>
+          <td><%= elem.employee %></td>
+          <td><%= elem.job %></td>
+          <td><%= elem.skill %></td>
+          <td><%= convertBoolValueToStr(elem.is_consul) %></td>
+          <td><%= convertBoolValueToStr(elem.is_wrapping) %></td>
+          <td></td>
+          <td><%= button_to "削除", "#{elem.id}", method: "delete", data: { confirm: "id:#{elem.id}のデータを削除します。\n*削除後データの復元はできません。" } %></td>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>

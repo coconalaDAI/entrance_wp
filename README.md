@@ -6,19 +6,28 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
+Ruby 2.4.2
+Rails 5.1.6
 
 * Configuration
 
 * Database creation
 
+$ bundle exec rails db:create
+上記コマンドでDB作成
+
 * Database initialization
 
-* How to run the test suite
+$ bundle exec rails db:migrate
+上記コマンドでDBのマイグレーション
 
-* Services (job queues, cache servers, search engines, etc.)
+* How to run the app
+
+$ bundle exec rails s
+でローカルサーバーを起動
+localhost:3000へアクセス
 
 * Deployment instructions
+$ git push heroku master
 
 * ...

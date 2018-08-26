@@ -4,9 +4,10 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+   def new
+     # super
+     redirect_to new_user_registration_path, alert: '入力情報が不適切です。'
+   end
 
   # POST /resource/sign_in
   # def create

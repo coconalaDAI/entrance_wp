@@ -1,0 +1,7 @@
+<div id="search-zone">
+  <%= form_tag '/admin_pages/search', method: :post do %>
+  <%= label_tag '名前' %>
+  <%= text_field_tag :serach_name %>
+  <%= submit_tag '送信' %>
+  <%end%>
+</div>
