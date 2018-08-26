@@ -1,0 +1,160 @@
+.contact100-form-title {
+  margin-top: 20px;
+}
+
+.contact100-form-title img {
+  width: 200px;
+  max-width: 200px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.contact100-form-title a {
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 5px 10px;
+  background: #846add;
+  border-radius: 25px;
+  color: #fff !important;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.contact100-form-btn:hover,
+.contact100-form-title a:hover {
+  background: #333333 !important;
+}
+
+.container-contact100-form-btn {
+  display: block;
+  text-align: center;
+}
+
+.contact100-form-btn {
+  display: inline-block;
+}
+
+.wrap-input100 {
+  margin-bottom: 20px;
+}
+
+.contact100-pic {
+  padding-top: 35px;
+}
+
+.btn-wrap {
+  display: inline-block;
+}
+
+.contact100-form {
+  width: 100%;
+}
+
+.nav-tabs {
+  margin-bottom: 40px;
+}
+
+.wrap-contact100 {
+  max-width: 100%;;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: -70px;
+  margin-top: 35px;
+  font-size: 1.8rem;
+  color: #495057;
+  height: 50px;
+}
+
+#h-login,
+#img-login {
+  display: none;
+}
+
+.container-contact100 {
+  display: block;
+}
+
+.container-contact100 {
+  -webkit-transition: background .4s;
+  -o-transition: background .4s;
+  -moz-transition: background .4s;
+  transition: background .4s;
+}
+
+#login .contact100-form-btn {
+  background: #6cbc2c;
+}
+
+#login .input100:focus + .focus-input100 + .symbol-input100 {
+  color: #6cbc2c;
+}
+
+#login .input100 {
+  background: rgb(108, 188, 44, 0.2);
+}
+
+#login .focus-input100 {
+  color: rgba(108, 188, 44, 0.5);
+}
+
+@media (max-width: 1200px) {
+  .form-container {
+    width: 55%;
+  }
+} 
+
+@media (max-width: 1150px) {
+  .wrap-contact100 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+} 
+
+@media (max-width: 768px) {
+  .wrap-contact100 {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+} 
+
+@media (max-width: 500px) {
+  .contact100-form-title img {
+    width: 90%;
+  }
+
+  .btn-wrap {
+    display: block;
+    margin-top: 15px;
+  }
+
+  .header-container {
+    font-size: 1.6rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .contact100-form-title a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  .contact100-form-title img {
+    width: 90%;
+  }
+  .contact100-form-title a {
+    margin-top: 20px;
+  }
+}

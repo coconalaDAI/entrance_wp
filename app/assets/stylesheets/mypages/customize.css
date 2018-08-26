@@ -1,0 +1,274 @@
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.form-group > p {
+    font-size: .9rem;
+    margin-bottom: 5px;
+}
+
+.form-group > small {
+    font-size: 70%;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: right;
+}
+
+.header-title {
+    width: 200px;
+    margin: 55px auto 10px auto;
+}
+
+.header-title img {
+    width: 100%;
+    height: auto;
+}
+
+.bouton-contact {
+    font-weight: bold;
+}
+
+form h1 {
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+
+.input-confirm {
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #eee;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: #eee;
+    word-wrap: break-word;
+    height: auto;
+}
+
+.input-confirm,
+input,
+select,
+textarea {
+    width: 80%;
+    font-size: 13.33px
+}
+
+textarea {
+    padding: 5px 15px;
+}
+
+.form-col-left .form-group:first-child,
+.form-col-lv2 .form-group:first-child {
+    margin-top: 20px;
+}
+
+.input-confirm,
+input,
+select {
+    min-height: 42px;
+    float: none;
+}
+
+.input-name {
+    max-width: 180px;
+}
+.input-zip,
+.input-address2,
+.input-seryears {
+    max-width: 130px;
+}
+
+.input-phone,
+.input-car {
+    max-width: 250px;
+}
+
+.input-job {
+    max-width: 300px;
+}
+
+.textarea-skill {
+    max-width: 500px;
+    height: auto;
+    min-height: 130px;
+}
+
+.select-confirm,
+select {
+    max-width: 130px;
+}
+
+select {
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-left: 11px;
+    height: 42px;
+}
+
+.select-q {
+    max-width: 100px;
+}
+
+.select-age,
+.select-gender {
+    max-width: 80px;
+}
+
+.form-container {
+    padding: 0;
+}
+
+.nav-tabs .nav-link {
+    color: #495057;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #495057;
+}
+
+.btn-q {
+    background: #81BDA4;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 3px;
+    padding: 0 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.bouton-contact {
+    margin-top: 0;
+}
+
+.modal-header,
+.modal-body {
+    padding: 1rem 1.5rem;
+}
+
+.modal-body {
+    word-wrap: break-word;
+    font-size: .9rem;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.border-red {
+    border: 1px solid #F6AA93;
+}
+
+#emptymessage,
+#errormessage {
+    display: none;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 600;
+    margin-bottom: 30px;
+    background-color: #F6AA93;
+    color: #b95d42;
+    border: 1px solid #ff5c5c;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+}
+
+#sendmessage,
+#emptymessage,
+#errormessage {
+    padding: 13px 10px 13px 10px;
+    font-size: .8rem;
+}
+
+button.disabled,
+button:disabled {
+    opacity: 0.65;
+}
+
+@media (min-width: 400px) {
+    form h1 {
+        font-size: 18px;
+    }
+
+    .form-group > p {
+        font-size: 1rem;
+    }
+
+    .input-confirm,
+    input,
+    select,
+    textarea {
+        width: 85%;
+    }
+
+    #sendmessage,
+    #emptymessage,
+    #errormessage {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 500px) {
+    .input-confirm,
+    input,
+    select,
+    textarea {
+        width: 90%;
+    }
+
+    .form-group > small {
+        display: inline;
+        text-align: left;
+    }
+
+    .modal-body {
+        font-size: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .input-confirm,
+    input,
+    select,
+    textarea {
+        width: 85%;
+    }
+
+    .form-col-lv2 input,
+    .form-col-lv2 select,
+    .form-col-lv2 textarea {
+        width: 90%;
+    }
+
+    .form-container > .input-confirm,
+    .form-container > input,
+    .form-container > select {
+        width: 70%;
+    }
+
+    .form-col-left {
+        border-right: 1px dotted #CCC;
+        padding-right: 0;
+    }
+
+    .form-col-right {
+        padding-left: 25px;
+    }
+
+    .form-col-right .form-group:first-child {
+        margin-top: 20px;
+    }
+}

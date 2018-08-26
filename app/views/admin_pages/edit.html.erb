@@ -1,0 +1,120 @@
+<div id='user_data_edit' >
+<h1>個別データ編集ページ</h1>
+<%= form_for @user_data, :url => { :controller => :admin_pages, :action => :update } do |f| %>
+  <%= f.hidden_field :user_id, value: @user_data.user_id %>
+  <div id='LV1' style="float:left">
+  <div class='form_area'>
+    <%= f.label '性' %>
+    <%= f.text_field :firstName %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '名' %>
+    <%= f.text_field :lastName %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label 'TEL' %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '郵便番号' %>
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '県' %>
+    <%= f.select :prefecture, Question2.prefecture_lists.keys %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '市' %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '区' %>
+    <%= f.text_field :address2 %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '年齢' %>
+    <%= f.select :age, Question2::AGE_LISTS %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '性別' %>
+    <%= f.select :gender, Question2.gender_lists.keys %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '車種' %>
+    <%= f.text_field :car_type %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '年式' %>
+    <%= f.text_field :model_year %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '車両の色' %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '車庫証明の住所' %>
+    <%= f.text_field :carAddress %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '免許証の色' %>
+    <%= f.select :licence_type, Question2.licenceType_lists.keys %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label 'モバイルのOS' %>
+    <%= f.select :mobileOS, Question2.mobileOS_lists.keys %>
+  </div>
+</div>
+
+<div id='LV2'>
+  <div class='form_area'>
+    <%= f.label 'ドライブレコーダー' %>
+    <%= f.select :isDriveRecorder, [['搭載',true],['非搭載',false]] %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '現在の職場の勤続年数' %>
+    <%= f.text_field :length_of_service %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '事業所（会社）の従業員数' %>
+    <%= f.select :employee, Question2.employeesNum_lists.keys %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label '職業' %>
+    <%= f.text_area :skill, rows:14 %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label 'スポットワークの依頼を受けるか' %>
+    <%= f.select :is_consul, [['はい', true],['いいえ', false]] %>
+  </div>
+
+  <div class='form_area'>
+    <%= f.label 'ラッピング作業を自分で行う意思があるか' %>
+    <%= f.select :is_wrapping, [['はい', true],['いいえ', false]] %>
+  </div>
+</div>
+<!--end of LV2-->
+  <div class='submit_area'>
+    <%= f.submit '更新' %>
+    <%= link_to "キャンセル", admin_pages_path %>
+  </div>
+
+<%end%>
+</div>

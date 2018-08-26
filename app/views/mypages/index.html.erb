@@ -1,8 +1,327 @@
-<h2>こんにちは <%= current_user.name %>様</h2>
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" id="modal-consulting">
+				<div class="modal-header">
+					<h5 class="modal-title">スポットワークとは</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>スポットワークに登録すると、あなたの持つスキルに応じたお仕事の依頼をさせていただくことがあります。</p>
+					<p>たとえばyoutuberやモデルであれば企業の広告への参加、プログラマであればシステム構築の依頼など、スキルの種類は問いません。</p>
+					<p>地域特化型のスポットワークプラットフォームとして、起業を検討する個人から新規事業の立ち上げや業務改善などに課題を抱えるクライアントの皆様に幅広くご活用頂いております。</p>
+				</div>
+			</div>
+			<div class="modal-content" id="modal-wrapping">
+				<div class="modal-header">
+					<h5 class="modal-title">ラッピング作業を自身で行うには</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>ラッピング作業を自身で行うにはカーサイドが行っているラッピング研修会へ参加し、資格を取得する必要があります。なお、作業を行っていただいた場合はカーサイドより報酬をお支払いします。</p>
+					<p>研修会のお知らせはホームページ内でお知らせいたしますのでご覧ください。（お電話でのご予約やお問い合わせは承っておりません）</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<%= link_to 'Lv2', question2s_path %>
-<%= link_to 'Lv3', question3s_path %>
+	<div class="container">
+		<h1 class="header-title"><%= link_to image_tag('carside-logo.png', :alt => 'carside'), "http://carside.jp/" %></h1>
+		<div class="info"><p> My Page </p></div>
+			<form action="/question2s" method="POST">
+			<h1>以下の項目を入力してください。<br>入力情報が多いカーサイダーはマッチングに有利になります。</h1>
+			<div class="contentform">
+				<div id="sendmessage"> メッセージは無事に送信されました。ありがとうございました。 </div>
+				<div id="emptymessage"> 未記入の項目があります。 </div>
+				<div id="errormessage"> エラーが発生しました。 </div>
 
-<div>
-  <p>登録情報</p>
-</div>
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a href="#top" class="nav-link active" data-toggle="tab"><span>Top</span></a>
+					</li>
+					<li class="nav-item">
+						<a href="#lv1" class="nav-link" data-toggle="tab"><span>LV1</span></a>
+					</li>
+					<li class="nav-item">
+						<a href="#lv2" class="nav-link" data-toggle="tab"><span>LV2</span></a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div id="top" class="tab-pane fade show active">
+						<div class="row">
+							<div class="col-md-6 form-col-left">
+								<div class="form-group">
+									<p>名前<span>*</span></p>
+									<div class="form-row">
+										<div class="col-md-6 form-container">
+											<span class="icon-case">姓</span>
+											<span class="input-confirm input-name" id="lastName-conf"><%= @question2.firstName %></span>
+											<div class="validation"></div>
+										</div>
+										<div class="col-md-6 form-container">
+											<span class="icon-case">名</span>
+											<span class="input-confirm input-name" id="firstName-conf"><%= @question2.lastName %></span>
+											<div class="validation"></div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<p>TEL<span>*</span></p>
+									<span class="icon-case"><i class="fa fa-phone"></i></span>
+									<span class="input-confirm input-phone" id="phoneNum-conf"><%= @question2.phone_number %></span>
+									<div class="validation"></div>
+								</div>
+								<div class="form-group">
+									<p>郵便番号</p>
+									<span class="icon-case">〒</span>
+									<span class="input-confirm input-zip" id="zip-conf"><%= @question2.postal_code %></span>
+								</div>
+								<div class="form-group">
+									<p>住所</p>
+									<div class="form-row">
+										<div class="col-md-6 form-container">
+											<span class="icon-case">県</span>
+											<span class="input-confirm select-confirm" id="address-conf"><%= @question2.prefecture %></span>
+										</div>
+										<div class="col-md-6 form-container">
+											<span class="icon-case">市</span>
+											<span class="input-confirm input-address2" id="address2-conf"><%= @question2.address %></span>
+										</div>
+									</div>
+									<span class="icon-case">区</span>
+									<span class="input-confirm" id="address3-conf"><%= @question2.address2 %></span>
+								</div>
+								<div class="form-group">
+									<p>年齢</p>
+									<span class="icon-case"><i class="fa fa-male"></i></span>
+									<span class="input-confirm select-age" id="age-conf"><%= @question2.age %></span>
+								</div>
+								<div class="form-group">
+									<p>性別</p>
+									<span class="icon-case"><i class="fa fa-user"></i></span>
+									<span class="input-confirm select-gender" id="gender-conf"><%= @question2.gender %></span>
+								</div>
+								<div class="form-group">
+									<p>車種</p>
+									<span class="icon-case"><i class="fa fa-car"></i></span>
+									<span class="input-confirm input-car" id="carModel-conf"><%= @question2.car_type %></span>
+								</div>
+								<div class="form-group">
+									<p>年式（製造年月日）</p>
+									<span class="icon-case"><i class="fa fa-cog"></i></span>
+									<span class="input-confirm input-car" id="modelYear-conf"><%= @question2.model_year %></span>
+								</div>
+								<div class="form-group">
+									<p>車両の色</p>
+									<span class="icon-case"><i class="fa fa-palette"></i></span>
+									<span class="input-confirm input-car" id="carColor-conf"><%= @question2.color %></span>
+								</div>
+								<div class="form-group">
+									<p>車庫証明の住所</p>
+									<span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+									<span class="input-confirm" id="carAddress-conf"><%= @question2.carAddress %></span>
+								</div>
+								<div class="form-group">
+									<p>免許証の色</p>
+									<span class="icon-case"><i class="fa fa-id-card"></i></span>
+									<span class="input-confirm select-confirm" id="licenseColor-conf"><%= @question2.licence_type %></span>
+								</div>
+								<div class="form-group">
+									<p>モバイルのOS</p>
+									<span class="icon-case"><i class="fa fa-mobile"></i></span>
+									<span class="input-confirm select-confirm" id="mobileOS-conf"><%= @question2.mobileOS %></span>
+								</div>
+								<div class="form-group">
+									<p>ドライブレコーダー</p>
+									<span class="icon-case"><i class="fa fa-video"></i></span>
+									<span class="input-confirm select-confirm" id="driveRecorder-conf"><%= convertBoolValueToStr(@question2.isDriveRecorder) %></span>
+								</div>
+							</div>
+							<div class="col-md-6 form-col-right">
+								<div class="form-group">
+									<p>現在の職場の勤続年数</p>
+									<span class="icon-case"><i class="fa fa-briefcase"></i></span>
+									<span class="input-confirm input-seryears" id="serviceYears-conf"><%= @question2.length_of_service %></span>
+								</div>
+								<div class="form-group">
+									<p>事業所（会社）の従業員数</p>
+									<span class="icon-case"><i class="fa fa-building"></i></span>
+									<span class="input-confirm select-confirm" id="employeesNum-conf"><%= @question2.employee %></span>
+								</div>
+								<div class="form-group">
+									<p>職業</p>
+									<span class="icon-case"><i class="fa fa-id-badge"></i></span>
+									<span class="input-confirm input-job" id="job-conf"><%= @question2.job %></span>
+								</div>
+								<div class="form-group">
+									<p>持っているスキルや免許など</p>
+									<span class="icon-case"><i class="fa fa-pen"></i></span>
+									<span class="input-confirm textarea-skill" id="skills-conf"><%= @question2.skill %></span>
+								</div>
+								<div class="form-group">
+									<p>スポットワークの依頼を受ける</p>
+									<span class="icon-case"><i class="fa fa-user-friends"></i></span>
+									<span class="input-confirm select-q" id="consulting-conf"><%= convertBoolValueToStr(@question2.is_consul) %></span>
+									<small class="text-muted">スポットワークとは<button type="button" class="btn-q" data-type="consulting">？</button></small>
+								</div>
+								<div class="form-group">
+									<p>ラッピング作業は自身で行う意思がある</p>
+									<span class="icon-case"><i class="fa fa-ribbon"></i></span>
+									<span class="input-confirm select-q" id="wrapping-conf"><%= convertBoolValueToStr(@question2.is_wrapping) %></span>
+									<small class="text-muted">自身で行うには<button type="button" class="btn-q" data-type="wrapping">？</button></small>
+								</div>
+							</div>
+						</div>
+						<%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+					</div>
+
+					<%= form_for(@question2, :url => {:controller => :question2s ,:action => :create}) do |f| %>
+					<div id="lv1" class="tab-pane fade">
+						<div class="row">
+							<div class="col-md-6 form-col-left">
+								<div class="form-group">
+									<p>名前<span>*</span></p>
+									<div class="form-row">
+										<div class="col-md-6 form-container">
+											<span class="icon-case">姓</span>
+											<%= f.text_field 'firstName', id:'firstName', class:'input-name form-required' %>
+											<div class="validation"></div>
+										</div>
+										<div class="col-md-6 form-container">
+											<span class="icon-case">名</span>
+											<%= f.text_field 'lastName',id:'lastName', class:'input-name form-required' %>
+											<div class="validation"></div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<p>TEL<span>*</span></p>
+									<span class="icon-case"><i class="fa fa-phone"></i></span>
+									<%= f.text_field 'phone_number', id:'PhoneNum', class:'input-phone form-required', placeholder:'例：090-1234-5678' %>
+									<div class="validation"></div>
+								</div>
+								<div class="form-group">
+									<p>郵便番号</p>
+									<span class="icon-case">〒</span>
+									<%= f.text_field 'postal_code', id:'zip', placeholder:'例：100-0001' %>
+								</div>
+								<div class="form-group">
+									<p>住所</p>
+									<div class="form-row">
+										<div class="col-md-6 form-container">
+											<span class="icon-case">県</span>
+											<%= f.select 'prefecture', Question2.prefecture_lists.keys, class: 'address', id:'address' %>
+										</div>
+										<div class="col-md-6 form-container">
+											<span class="icon-case">市</span>
+											<%= f.text_field 'address', class:'input-address2', id:'address2', placeholder:'例：○○市' %>
+										</div>
+									</div>
+									<span class="icon-case">区</span>
+									<%= f.text_field 'address2', id:'address3', placeholder:"例：○○区○○1-1-1" %>
+								</div>
+								<div class="form-group">
+									<p>年齢</p>
+									<span class="icon-case"><i class="fa fa-male"></i></span>
+									<%= f.select 'age', Question2::AGE_LISTS, class:'select-age', id:'age' %>
+								</div>
+								<div class="form-group">
+									<p>性別</p>
+									<span class="icon-case"><i class="fa fa-user"></i></span>
+									<%= f.select 'gender', Question2.gender_lists.keys, class:'select-gender', id:'gender' %>
+								</div>
+							</div>
+							<div class="col-md-6 form-col-right">
+								<div class="form-group">
+									<p>車種</p>
+									<span class="icon-case"><i class="fa fa-car"></i></span>
+									<%= f.text_field 'car_type', class:'input-car', id:'carmodel', placeholder:'例：プリウスアルファ' %>
+								</div>
+								<div class="form-group">
+									<p>年式（製造年月日）</p>
+									<span class="icon-case"><i class="fa fa-cog"></i></span>
+									<%= f.text_field 'model_year', class:'input-car', id:'modelYear', placeholder:'例：平成28年' %>
+								</div>
+								<div class="form-group">
+									<p>車両の色</p>
+									<span class="icon-case"><i class="fa fa-palette"></i></span>
+									<%= f.text_field 'color', class:'input-car', id:'carColor', placeholder:'例：シルバー' %>
+								</div>
+								<div class="form-group">
+									<p>車庫証明の住所</p>
+									<span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+									<%= f.text_field 'carAddress', id:'carAddress', placeholder:'例：千葉県千葉市など' %>
+								</div>
+								<div class="form-group">
+									<p>免許証の色</p>
+									<span class="icon-case"><i class="fa fa-id-card"></i></span>
+									<%= f.select 'licence_type', Question2.licenceType_lists.keys, id:'licenseColor' %>
+								</div>
+								<div class="form-group">
+									<p>モバイルのOS</p>
+									<span class="icon-case"><i class="fa fa-mobile"></i></span>
+									<%= f.select 'mobileOS', Question2.mobileOS_lists.keys, id:'mobileOS' %>
+								</div>
+								<div class="form-group">
+									<p>ドライブレコーダー</p>
+									<span class="icon-case"><i class="fa fa-video"></i></span>
+									<%= f.select 'isDriveRecorder', [['搭載',true],['非搭載',false]],id:'driveRecorder' %>
+								</div>
+							</div>
+						</div>
+						<%= f.submit 'Send', class:'bouton-contact' %>
+					</div>
+					<!--end of form LV1-->
+
+					<div id="lv2" class="tab-pane fade">
+						<div class="form-col-lv2">
+							<div class="form-group">
+								<p>現在の職場の勤続年数</p>
+								<span class="icon-case"><i class="fa fa-briefcase"></i></span>
+								<%= f.text_field 'length_of_service',class:'input-seryears', id:'serviceYears', placeholder:'例：5年目' %>
+							</div>
+							<div class="form-group">
+								<p>事業所（会社）の従業員数</p>
+								<span class="icon-case"><i class="fa fa-building"></i></span>
+								<%= f.select 'employee', Question2.employeesNum_lists.keys, id:'employeesNum' %>
+							</div>
+							<div class="form-group">
+								<p>職業</p>
+								<span class="icon-case"><i class="fa fa-id-badge"></i></span>
+								<%= f.text_field 'job', class:'input-job', id:'job', placeholder:'例：SE、ユーチューバーなど' %>
+							</div>
+							<div class="form-group">
+								<p>持っているスキルや免許など</p>
+								<span class="icon-case"><i class="fa fa-pen"></i></span>
+								<%= f.text_area 'skill', rows:14 ,class:'textarea-skill', id:'skills', placeholder:'例：Ruby,動画編集,チャンネル登録者数など' %>
+							</div>
+							<div class="form-group">
+								<p>スポットワークの依頼を受ける</p>
+								<span class="icon-case"><i class="fa fa-user-friends"></i></span>
+								<%= f.select 'is_consul', [['はい', true],['いいえ', false]] ,class:'select-q', id:'consulting' %>
+								<small class="text-muted">スポットワークとは<button type="button" class="btn-q" data-type="consulting">？</button></small>
+							</div>
+							<div class="form-group">
+								<p>ラッピング作業は自身で行う意思がある</p>
+								<span class="icon-case"><i class="fa fa-ribbon"></i></span>
+								<%= f.select 'is_wrapping', [['はい', true],['いいえ', false]], class:'select-q', id:'wrapping' %>
+								<small class="text-muted">自身で行うには<button type="button" class="btn-q" data-type="wrapping">？</button></small>
+							</div>
+							<%= f.hidden_field :user_id, value: current_user.id %>
+							<%= f.submit 'Send', class:'bouton-contact' %>
+						</div>
+					</div>
+					<%end%>
+				</div>
+			</form>
+			</div>
+	</div>
+
+	<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="/javascripts/customize.js?0715"></script>
