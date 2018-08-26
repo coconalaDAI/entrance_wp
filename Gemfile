@@ -4,6 +4,21 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+gem 'dotenv-rails' #環境変数を簡単に扱うのに使用
+
+group :development, :test do
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn' #Unicornの起動を簡単に行える
+end
+
+group :production, :staging do
+  gem 'unicorn'
+end
+
 gem 'jp_prefecture'
 
 gem 'devise'
@@ -12,7 +27,6 @@ gem 'rails', '~> 5.1.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0', group: [:development, :test]
 
-gem 'pg', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
