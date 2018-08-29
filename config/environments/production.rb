@@ -88,7 +88,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'https://entrancewp.herokuapp.com/'}
+  config.action_mailer.default_url_options = { host: 'http://ik1-334-27396.vs.sakura.ne.jp/'}
 
   config.action_mailer.smtp_settings = {
  :enable_starttls_auto => true,
