@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require jquery-3.2.1.min.js
+//= require popper.js
 //= require_tree .
