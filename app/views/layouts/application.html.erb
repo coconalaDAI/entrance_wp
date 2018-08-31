@@ -3,12 +3,10 @@
   <head>
     <title>EntranceWp</title>
     <%= csrf_meta_tags %>
-    
-    <%= javascript_include_tag 'application' %>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
     <% if is_mypages_controller?%>
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -18,6 +16,8 @@
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
       <%= stylesheet_link_tag 'mypages/form' %>
       <%= stylesheet_link_tag 'mypages/customize.css?0715' %>
+    <%else%>
+      <%= javascript_include_tag 'application' %>
     <%end%>
   </head>
 
