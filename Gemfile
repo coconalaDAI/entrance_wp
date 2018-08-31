@@ -17,6 +17,7 @@ end
 
 group :production, :staging do
   gem 'unicorn'
+  gem 'non-stupid-digest-assets'
 end
 
 gem 'jp_prefecture'
