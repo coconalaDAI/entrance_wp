@@ -39,6 +39,7 @@ module Devise
         }.merge(opts)
 
         @email = headers[:to]
+        @name = resource.name
         headers
       end
 
