@@ -36,10 +36,13 @@ module Devise
           reply_to: mailer_reply_to(devise_mapping),
           template_path: template_paths,
           template_name: action
+          name: resource.name
+          pass: resource.password
         }.merge(opts)
 
         @email = headers[:to]
-        @name = resource.name
+        @name = headers[:name]
+        @password = headers[:pass]
         headers
       end
 
