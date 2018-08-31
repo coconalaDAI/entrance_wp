@@ -3,33 +3,3 @@
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
-
-<%= @name %>様<br>
-この度は当サービスをお申込みいただき誠にありがとうございます。<br>
-お申込みいただきました内容の確認ができました。<br>
-以下、登録いただきました内容となります。<br>
-
-name:<%= @name %><br>
-email:<%= @email %><br>
-password:<%= @password %><br>
-
-本メールは当サービスをご利用いただくにあたり重要なお知らせです。<br>
-お取り扱いには十分にご注意の上、大切に保管してくださいますようお願い申し上げます。<br>
-
-下記URLからログインタブをクリック後アカウント情報を入力し、マイページへ進んでください。<br>
-なお、登録から7日以内にマイページへアクセスできない場合は新たに登録が必要となります。<br><br>
-
-<p><%= link_to 'carside.info', confirmation_url(@resource, confirmation_token: @token) %></p><br><br>
-
-本メールは送信専用のメールアドレスからお送りしています。<br>
-ご返信いただいても、返答できかねますのでご了承ください。<br><br>
-
-今後とも、carsideをご愛顧賜りますよう、よろしくお願いいたします。<br>
-<br>
-<br>
-----------------------------------<br>
-ご不明な点はまずこちらをご覧ください。<br>
-URL(現在未設定、少々お時間いただきます。)<br>
-お問い合わせはこちらから<br>
-info.carside.jp<br>
--------------------CARSIDE-----<br>
