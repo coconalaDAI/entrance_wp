@@ -14,11 +14,9 @@ class MypagesController < ApplicationController
   def initQ2
     q2 = Question2.find_by(user_id:current_user.id)
     if q2.nil?
-          logger.debug 'こっちきてるお'
       @question2 = Question2.new
     else
-      logger.debug 'いあ、こっちだお'
-      logger.debug q2
+      logger.debug q2.inspect
       @question2 = q2
       render mypages_edit_path
     end
