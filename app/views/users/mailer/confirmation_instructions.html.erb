@@ -13,7 +13,10 @@ password:＊ご自身で設定されたパスワード<br>
 下記URLからログインタブをクリック後アカウント情報を入力し、マイページへ進んでください。<br>
 なお、登録から7日以内にマイページへアクセスできない場合は新たに登録が必要となります。<br><br>
 
-<p><%= link_to 'carside.info', confirmation_url(@resource, confirmation_token: @token) %></p><br><br>
+以下のリンクをクリックしてアカウントを有効化してください。<br>
+<p><%= link_to "#{confirmation_url(@resource, confirmation_token: @token)}", confirmation_url(@resource, confirmation_token: @token) %></p><br><br>
+
+再度、サイトにアクセスする際は、<%= link_to "carside.info", "http://carside.info" %>をご利用ください。<br>
 
 本メールは送信専用のメールアドレスからお送りしています。<br>
 ご返信いただいても、返答できかねますのでご了承ください。<br><br>
