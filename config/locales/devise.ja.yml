@@ -1,13 +1,13 @@
 ja:
   devise:
     confirmations:
-      confirmed: "アカウントが確認されました。ログインしています。"
+      confirmed: "アカウントが確認されました。ログインして下さい。"
       send_instructions: "アカウントの確認方法を数分以内にメールでご連絡します。"
       send_paranoid_instructions: "ご登録のメールアドレスが保存されている場合、アカウントの確認方法をメールでご連絡します。"
     failure:
       already_authenticated: "既にログインしています。"
       inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
+      invalid: "メールアドレスかパスワードが誤っています。"
       locked: "アカウントがロックされています。"
       last_attempt: "あなたのアカウントがロックされる前に、もう1つの試みを持っています。"
       not_found_in_database: "メールアドレスまたはパスワードが無効です。"
@@ -35,7 +35,8 @@ ja:
       signed_up: "アカウント登録を受け付けました。"
       signed_up_but_inactive: "アカウントは登録されていますが、アクティブになっていないため利用できません。"
       signed_up_but_locked: "アカウントは登録されていますが、ロックされているため利用できません。"
-      signed_up_but_unconfirmed: "確認メールを登録したメールアドレス宛に送信しました。リンクを開いてアカウントを有効にして下さい。"
+      #signed_up_but_unconfirmed: "確認メールを登録したメールアドレス宛に送信しました。リンクを開いてアカウントを有効にして下さい。"
+      signed_up_but_unconfirmed: "登録しました。入力されたアドレスにメールを送信しましたのでご確認ください。"
       update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを新しいメールアドレス宛に送信しましたので、リンクを開いて更新を有効にして下さい。"
       updated: "アカウントが更新されました。"
     sessions:
@@ -53,5 +54,13 @@ ja:
       not_found: "は見つかりませんでした。"
       not_locked: "ロックされていません。"
       not_saved:
-        one: "エラーにより、この %{resource} を保存できません："
-        other: "%{count} 個のエラーにより、この %{resource} を保存できません："
+        #one: "エラーにより、この %{resource} を保存できません："
+        one: "エラーにより、処理に失敗しました。"
+        #other: "%{count} 個のエラーにより、この %{resource} を保存できません："
+        other: "エラーにより、処理に失敗しました。"
+      taken: "は既に使用されています。"
+      blank: "が入力されていません。"
+      too_short: "は%{count}文字以上に設定して下さい。"
+      too_long: "は%{count}文字以下に設定して下さい。"
+      invalid: "は有効でありません。"
+      confirmation: "が内容とあっていません。"
