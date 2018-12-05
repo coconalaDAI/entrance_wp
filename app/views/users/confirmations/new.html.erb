@@ -1,16 +1,53 @@
-<h2>Resend confirmation instructions</h2>
+<head>
+  <!--===============================================================================================-->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <%= favicon_link_tag() %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'bootstrap.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'font-awesome-4.7.0/css/font-awesome.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'animate.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'hamburgers.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'select2.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'register/util.css' %>
+  <%= stylesheet_link_tag 'register/main.css' %>
+  <%= stylesheet_link_tag 'register/customize.css?0716' %>
+  <%= stylesheet_link_tag 'password.css' %>
+  <!--===============================================================================================-->
+</head>
+<div class="bg-contact100" style="background-image: url(<%= asset_path 'bg-01.jpg' %>);">
+  <div class="container-contact100">
+    <header class="header-container">
+      <span>メール認証</span>
+    </header>
+    <div class="wrap-contact100">
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      <div class="contact100-form-title">
+        <%= image_tag 'carside-logo.png', alt:'Carside' %>
+        <div class="btn-wrap">
+          <a href="http://carside.jp">Home</a>
+        </div>
+      </div>
+      <%= devise_error_messages! %>
+      <div class="form-container">
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <div class="wrap-input100 validate-input">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input100', placeholder:'Email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="container-contact100-form-btn">
+          <%= f.submit "認証メールを再送する", class:'contact100-form-btn' %>
+        </div>
+        <% end %>
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

@@ -1,0 +1,17 @@
+.flash {
+    animation-duration: 1s;
+    color: #fff;
+    text-align: center;
+    &__alert{
+      background-color: red;
+    }
+    &__notice {
+      background-color: blue;
+    }
+    & p{
+      color: #fff;
+      @media (min-width: 1200px) {
+        font-size: 1.25rem;
+      }
+    }
+  }

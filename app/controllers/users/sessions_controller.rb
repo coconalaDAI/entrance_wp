@@ -5,8 +5,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
    def new
-     # super
-     redirect_to new_user_registration_path, alert: 'å…¥åŠ›æƒ…å ±ãŒä¸é©åˆ‡ã§ã™ã€‚'
+     super
+     #redirect_to new_user_registration_path, alert: '“ü—Íî•ñ‚ª•s“KØ‚Å‚·B'
    end
 
   # POST /resource/sign_in

@@ -1,20 +1,57 @@
-<h2>パスワードを変更してください。</h2>
+<head>
+  <!--===============================================================================================-->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <%= favicon_link_tag() %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'bootstrap.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'font-awesome-4.7.0/css/font-awesome.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'hamburgers.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'select2.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'register/util.css' %>
+  <%= stylesheet_link_tag 'register/main.css' %>
+  <%= stylesheet_link_tag 'register/customize.css?0716' %>
+  <%= stylesheet_link_tag 'confirmation.css' %>
+  <!--===============================================================================================-->
+</head>
+<div class="bg-contact100" style="background-image: url(<%= asset_path 'bg-01.jpg' %>);">
+  <div class="container-contact100">
+    <header class="header-container">
+      <span>パスワード変更</span>
+    </header>
+    <div class="wrap-contact100">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "新しいパスワードを入力してください。" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder:"PassWord(#{@minimum_password_length}文字以上)" %>
+      <div class="contact100-form-title">
+        <%= image_tag 'carside-logo.png', alt:'Carside' %>
+        <div class="btn-wrap">
+          <a href="http://carside.jp">Home</a>
+        </div>
+      </div>
+      <%= devise_error_messages! %>
+      <div class="form-container">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+        <%= f.label :password, "新しいパスワードを入力してください。" %>
+        <div class="wrap-input100 validate-input">
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", class:'input100', placeholder:"PassWord(#{@minimum_password_length}文字以上)" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+          </span>
+        </div>
+        <div class="wrap-input100 validate-input">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:'input100', placeholder:"確認のため再入力してください。" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+          </span>
+        </div>
+        <div class="container-contact100-form-btn">
+          <%= f.submit "パスワードを変更", class:'contact100-form-btn' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "確認のため再入力してください。" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "パスワードを変更" %>
-  </div>
-<% end %>
+</div>

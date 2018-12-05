@@ -1,7 +1,4 @@
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	<%= favicon_link_tag() %>
@@ -9,8 +6,6 @@
   <%= stylesheet_link_tag 'bootstrap.min.css' %>
 <!--===============================================================================================-->
   <%= stylesheet_link_tag 'font-awesome-4.7.0/css/font-awesome.min.css' %>
-<!--===============================================================================================-->
-  <%= stylesheet_link_tag 'animate.css' %>
 <!--===============================================================================================-->
   <%= stylesheet_link_tag 'hamburgers.min.css' %>
 <!--===============================================================================================-->
@@ -28,8 +23,7 @@
       <span id="h-login">ログイン画面</span>
     </header>
     <div class="wrap-contact100">
-
-
+      <%= devise_error_messages! %>
       <div class="contact100-pic js-tilt" data-tilt>
         <%= image_tag 'img-01.png', id:'img-register', alt:'IMG' %>
         <%= image_tag 'img-02.png', id:'img-login', alt:'IMG' %>
@@ -58,7 +52,7 @@
           <div id="register" class="tab-pane fade show active">
 
             <!-- 登録フォーム -->
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html:{ class: "validate-form" }) do |f| %>
 
               <div class="wrap-input100 validate-input" data-validate = "名前の入力が必要です">
                 <%= f.text_field :name, class:'input100', placeholder:'Name' %>
@@ -75,14 +69,14 @@
                 </span>
               </div>
 
-              <div class="wrap-input100 validate-input">
+              <div class="wrap-input100 validate-input" data-validate = "パスワードの入力が必要です">
                 <%= f.password_field :password, autocomplete: "off", class:'input100', placeholder:"PassWord(#{@minimum_password_length}文字以上)" %>
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
                   <!--<i class="fas fa-key" aria-hidden="true"></i>-->
                 </span>
               </div>
-              <div class="wrap-input100 validate-input">
+              <div class="wrap-input100 validate-input" data-validate = "パスワードの入力が必要です">
                 <%= f.password_field :password_confirmation, autocomplete: "off", class:'input100', placeholder:'PassWord(もう1度入力)' %>
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
@@ -145,7 +139,7 @@
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
-		})
+    });
 	</script>
 <!--===============================================================================================-->
   <%= javascript_include_tag 'register/main.js' %>

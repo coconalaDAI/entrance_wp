@@ -1,4 +1,5 @@
 class Question3sController < ApplicationController
+  before_action :authenticate_user!
   def index
     q3 = Question3.find_by(user_id:current_user.id)
     if q3.nil?

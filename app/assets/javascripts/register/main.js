@@ -2,6 +2,13 @@
 (function ($) {
     "use strict";
     
+    if(location.href.match(/sign_in/)){
+        var color = '#6cbc2c';
+        var colorBack = 'rgba(108, 188, 44, 0.9)';
+        changeColor(color, colorBack);
+        $('#h-register,#img-register').hide();
+        $('#h-login,#img-login').show();
+    }
     /*==================================================================
     [ Validate ]*/
 

@@ -1,14 +1,51 @@
-<h2>パスワードを忘れましたか？</h2>
+<head>
+  <!--===============================================================================================-->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <%= favicon_link_tag() %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'bootstrap.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'font-awesome-4.7.0/css/font-awesome.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'hamburgers.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'select2.min.css' %>
+  <!--===============================================================================================-->
+  <%= stylesheet_link_tag 'register/util.css' %>
+  <%= stylesheet_link_tag 'register/main.css' %>
+  <%= stylesheet_link_tag 'register/customize.css?0716' %>
+  <%= stylesheet_link_tag 'password.css' %>
+  <!--===============================================================================================-->
+</head>
+<div class="bg-contact100" style="background-image: url(<%= asset_path 'bg-01.jpg' %>);">
+  <div class="container-contact100">
+    <header class="header-container">
+      <span>パスワード再設定</span>
+    </header>
+    <div class="wrap-contact100">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    登録のメールアドレスを入力してください。<br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="contact100-form-title">
+        <%= image_tag 'carside-logo.png', alt:'Carside' %>
+        <div class="btn-wrap">
+          <a href="http://carside.jp">Home</a>
+        </div>
+      </div>
+      <%= devise_error_messages! %>
+      <div class="form-container">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+        <p>登録のメールアドレスを入力してください。</p>
+        <div class="wrap-input100 validate-input">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input100', placeholder:"Email" %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+          </span>
+        </div>
+        <div class="container-contact100-form-btn">
+          <%= f.submit "パスワードをリセットする。", class:'contact100-form-btn' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "パスワードをリセットする。" %>
-  </div>
-<% end %>
+</div>
