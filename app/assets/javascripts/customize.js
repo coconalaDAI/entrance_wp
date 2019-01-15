@@ -41,4 +41,9 @@ $(function(){
 
     //selectタグを初期化
     $('select').prop('selectedIndex', -1);
+
+    function fadeOutFlash(){
+        $('.flash.fadeout').fadeOut('slow');
+    }
+    setTimeout(fadeOutFlash, 5000);
 });

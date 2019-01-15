@@ -2,11 +2,11 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  prepend_before_action :set_minimum_password_length, only: [:new, :edit]
   # GET /resource/sign_in
    def new
      super
-     #redirect_to new_user_registration_path, alert: '“ü—Íî•ñ‚ª•s“KØ‚Å‚·B'
+     #redirect_to new_user_registration_path, alert: 'å…¥åŠ›æƒ…å ±ãŒä¸é©åˆ‡ã§ã™ã€‚'
    end
 
   # POST /resource/sign_in

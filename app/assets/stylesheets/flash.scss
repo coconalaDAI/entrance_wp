@@ -2,10 +2,13 @@
     animation-duration: 1s;
     color: #fff;
     text-align: center;
-    &__alert{
+    &_alert{
       background-color: red;
     }
-    &__notice {
+    &_notice_light_blue {
+      background-color: lightblue;
+    }
+    &_notice {
       background-color: blue;
     }
     & p{

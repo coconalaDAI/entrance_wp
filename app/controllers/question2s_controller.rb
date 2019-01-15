@@ -12,14 +12,14 @@ end
 
   def create
     Question2.create(question2s_params)
-    redirect_to mypages_path,notice: 'アンケートの回答が完了しました。'
+    redirect_to mypages_path,notice: '情報の登録が完了しました。'
   end
 
   def update
     q2 = Question2.find_by(user_id:params[:question2][:user_id])
     q2.update_attributes(question2s_params)
     logger.debug q2.inspect
-    redirect_to mypages_path,notice: '回答内容の更新が完了しました。'
+    redirect_to mypages_path,notice: '情報の更新が完了しました。'
   end
 
   private

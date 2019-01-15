@@ -1,5 +1,10 @@
 <% flash.each do |key, value| %>
-    <%= content_tag(:div, class: "flash flash__#{key}") do %>
+    <% key = "notice_light_blue" if [
+        "ログインまたは登録が必要です。",
+        "情報の登録が完了しました。",
+        "情報の更新が完了しました。"
+        ].include?(value) %>
+    <%= content_tag(:div, class: "flash flash_#{key}#{is_mypages_controller? ? " fadeout" : ""}") do %>
         <%= content_tag(:p, value) %>
     <% end %>
 <% end %>
