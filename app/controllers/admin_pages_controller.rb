@@ -1,5 +1,7 @@
 class AdminPagesController < ApplicationController
-  layout 'admin'
+   before_action  :authenticate_admin!
+#  layout 'admin'
+
    protect_from_forgery except: :destroy # destroyアクションを除外
 
   def index
