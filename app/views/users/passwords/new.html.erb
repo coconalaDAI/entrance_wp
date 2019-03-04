@@ -34,7 +34,7 @@
       <div class="form-container">
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.hidden_field :reset_password_token %>
-        <p>登録のメールアドレスを入力してください。</p>
+        <p>登録済のメールアドレスを入力してください。</p>
         <div class="wrap-input100 validate-input">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input100', placeholder:"Email" %>
           <span class="focus-input100"></span>

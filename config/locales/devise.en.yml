@@ -68,4 +68,4 @@ en:
       too_short: "％{attribute}は%{count}文字以上に設定して下さい。"
       too_long: "％{attribute}は%{count}文字以下に設定して下さい。"
       invalid: "％{attribute}は有効でありません。"
-      confirmation: "％{attribute}が内容とあっていません。"
+      confirmation: "％{attribute}が一致しません。"
